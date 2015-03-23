@@ -8,6 +8,7 @@
 
 #import "PuzzleBoardView.h"
 #import "TileViewGenerator.h"
+#import "RoundedTileViewGenerator.h"
 #import "Puzzle.h"
 #import "TileView.h"
 #import "Move.h"
@@ -38,9 +39,13 @@
         [view removeFromSuperview];
     }
 
-    CGFloat sideSize = CGRectGetWidth(self.frame) / _puzzle.sideSize;
-    TileViewGenerator *generator =
-        [[TileViewGenerator alloc] initWithItemSize:CGSizeMake(sideSize, sideSize)];
+    int padding = 5;
+    CGFloat sideSize = (CGRectGetWidth(self.frame) - padding * (_puzzle.sideSize + 1)) / _puzzle.sideSize;
+//    TileViewGenerator *generator =
+//        [[TileViewGenerator alloc] initWithItemSize:CGSizeMake(sideSize, sideSize)];
+    
+    RoundedTileViewGenerator *generator =
+      [[RoundedTileViewGenerator alloc] initWithItemSize:CGSizeMake(sideSize, sideSize) padding:padding];
 
     for (Tile *tile in self.puzzle.tiles) {
         TileView *tileView = [generator viewForTile:tile];

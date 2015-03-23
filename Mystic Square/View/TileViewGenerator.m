@@ -12,35 +12,33 @@
 
 @import QuartzCore;
 
-@implementation TileViewGenerator {
-    CGSize _itemSize;
-}
+@implementation TileViewGenerator
 
 - (instancetype)initWithItemSize:(CGSize)size {
     if (self = [super init]) {
-        _itemSize = size;
+        _size = size;
     }
     
     return self;
 }
 
 - (TileView *)viewForTile:(Tile *)tile {
-    CGFloat x = _itemSize.width * (Column(tile) - 0.5f);
-    CGFloat y =_itemSize.height * (Row(tile) - 0.5f);
+    CGFloat x = self.size.width * (Column(tile) - 0.5f);
+    CGFloat y = self.size.height * (Row(tile) - 0.5f);
     tile.position = CreatePosition(tile.position.tilePoint, CGPointMake(x, y));
     
     if (tile.isEmpty) {
         return nil;
     }
     
-    CGRect rect = CGRectMake(0, 0, _itemSize.width, _itemSize.height);
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     TileView *itemView = [[TileView alloc] initWithFrame:rect];
     itemView.backgroundColor = [UIColor lightGrayColor];
     itemView.layer.borderColor = [UIColor blueColor].CGColor;
     itemView.layer.borderWidth = 1.f;
     itemView.center = tile.position.displayPoint;
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _itemSize.width, _itemSize.height)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.size.width, self.size.height)];
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:34];
     label.text = [NSString stringWithFormat:@"%d", tile.number];

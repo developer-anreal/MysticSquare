@@ -20,6 +20,8 @@
 		DB8D3C901ABED0A60099B71E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D3C8F1ABED0A60099B71E /* main.m */; };
 		DB8D3C931ABED0A60099B71E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D3C921ABED0A60099B71E /* AppDelegate.m */; };
 		DB8D3CAA1ABED0A60099B71E /* Mystic_SquareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8D3CA91ABED0A60099B71E /* Mystic_SquareTests.m */; };
+		DBB1E4771AC05C7B007B6885 /* RoundedTileViewGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB1E4761AC05C7B007B6885 /* RoundedTileViewGenerator.m */; };
+		DBB1E47D1AC068E1007B6885 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB1E47C1AC068E1007B6885 /* Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,10 @@
 		DB8D3CA31ABED0A60099B71E /* Mystic SquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mystic SquareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8D3CA81ABED0A60099B71E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8D3CA91ABED0A60099B71E /* Mystic_SquareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mystic_SquareTests.m; sourceTree = "<group>"; };
+		DBB1E4751AC05C7B007B6885 /* RoundedTileViewGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTileViewGenerator.h; sourceTree = "<group>"; };
+		DBB1E4761AC05C7B007B6885 /* RoundedTileViewGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedTileViewGenerator.m; sourceTree = "<group>"; };
+		DBB1E47B1AC068E1007B6885 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		DBB1E47C1AC068E1007B6885 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,8 @@
 				1931BCDA15DD6303C6FB444E /* Puzzle.h */,
 				1931B6853489C1E323FDA57B /* Tile.m */,
 				1931B8529C7723F69DC6B089 /* Puzzle.m */,
+				DBB1E47B1AC068E1007B6885 /* Common.h */,
+				DBB1E47C1AC068E1007B6885 /* Common.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +127,8 @@
 				1931B6527510B1B48AAD5404 /* TileView.h */,
 				1931B3621EE21F470C19FF83 /* TileViewGenerator.h */,
 				1931B5D598170313C142043B /* TileViewGenerator.m */,
+				DBB1E4751AC05C7B007B6885 /* RoundedTileViewGenerator.h */,
+				DBB1E4761AC05C7B007B6885 /* RoundedTileViewGenerator.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,10 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB1E47D1AC068E1007B6885 /* Common.m in Sources */,
 				DB8D3C931ABED0A60099B71E /* AppDelegate.m in Sources */,
 				DB8D3C901ABED0A60099B71E /* main.m in Sources */,
 				1931BE380088F53241561BC3 /* Move.m in Sources */,
 				1931BE9BA652E72C8CAEDE95 /* Tile.m in Sources */,
+				DBB1E4771AC05C7B007B6885 /* RoundedTileViewGenerator.m in Sources */,
 				1931BECBDD8E5A9318FFECE5 /* Puzzle.m in Sources */,
 				1931BB7328C1A1E6EA5BE9A1 /* PuzzleBoardView.m in Sources */,
 				1931B471EED614F53B302534 /* TileView.m in Sources */,

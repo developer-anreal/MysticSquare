@@ -17,4 +17,6 @@
 - (instancetype)initWithItemSize:(CGSize)size;
 - (TileView *)viewForTile:(Tile *)tile;
 
+@property (nonatomic) CGSize size;
+
 @end
