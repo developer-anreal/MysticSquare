@@ -30,4 +30,12 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)undo:(id)sender {
+    [self.puzzleContainer undo];
+}
+
+- (IBAction)reset:(id)sender {
+    [self.puzzleContainer restart];
+}
+
 @end

@@ -20,7 +20,7 @@
 @implementation PuzzleBoardView
 
 - (void)setPuzzle:(Puzzle *)puzzle {
-    if (_puzzle != nil) {
+    if (_puzzle != nil && _puzzle.isPlaying) {
         NSAssert(_puzzle.isPlaying, @"Try to set puzzle while already playing on board.");
     }
     _puzzle.delegate = nil;
@@ -30,7 +30,21 @@
 }
 
 - (void)createPuzzle {
-    self.puzzle = [Puzzle createSimplePuzzle];
+    // This one for simple several moves setup
+//    self.puzzle = [Puzzle createSimplePuzzle];
+    self.puzzle = [[Puzzle alloc] init];
+}
+
+- (void)restart {
+    [self.puzzle reset];
+    for (UIView *v in self.subviews) {
+        [v removeFromSuperview];
+    }
+    [self createPuzzle];
+}
+
+- (void)undo {
+    [self.puzzle undoLastMove];
 }
 
 - (void)generateViews {
@@ -41,6 +55,7 @@
 
     int padding = 5;
     CGFloat sideSize = (CGRectGetWidth(self.frame) - padding * (_puzzle.sideSize + 1)) / _puzzle.sideSize;
+    // Basic tiles generator
 //    TileViewGenerator *generator =
 //        [[TileViewGenerator alloc] initWithItemSize:CGSizeMake(sideSize, sideSize)];
     

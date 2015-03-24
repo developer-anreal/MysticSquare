@@ -15,5 +15,7 @@
 @property (nonatomic, strong) Puzzle *puzzle;
 
 - (void)createPuzzle;
+- (void)restart;
+- (void)undo;
 
 @end

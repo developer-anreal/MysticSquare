@@ -54,7 +54,7 @@
     }
     
     if (N % 2 != 0) {
-        NSLog(@"Unsolved puzzle: %@", self);
+        NSLog(@"Unsolved puzzle: %@", puzzle);
         puzzle = [self generatePuzzleWithSideSize:sideSize];
     }
     
@@ -207,6 +207,7 @@
 }
 
 - (void)reset {
+    _isStarted = NO;
     [_moves removeAllObjects];
 }
 
